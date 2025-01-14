@@ -1,4 +1,4 @@
-# Linear stability of turbulent channel flow with control
+# Linear stability of a channel flow with control
 
 This repository contains subroutines to analyse linear stability of an arbitrary mean velocity profile, including those for turbulent channel flows. A generalised eigenvalue problem is solved for wall-normal vorticity and Laplacian of wall-normal velocity in a periodic channel. Equations are discretized using spectral Chebyshev method in wall-normal direction, and solved for a fixed wavenumbers $\alpha$ and $\beta$ in streamwise and spanwise directions.
 
