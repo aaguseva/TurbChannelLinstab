@@ -6,6 +6,11 @@ The main subroutine is OSS_control, which requires a call to Dmat(N), constructi
 
 The resulting eigenvectors u,v,w can be obtained with get_vel(...)
 
+For more details, see
+- Guseva, A. and Jiménez, J. (2022) Linear instability and resonance effects in large-scale opposition flow control. J. Fluid Mech., 935, A35,
+and the references therein.
+
+
 ### To use the code:
 - set wavenumbers $\alpha$, $\beta$
 - calculate differentiation matrices with Dmat
