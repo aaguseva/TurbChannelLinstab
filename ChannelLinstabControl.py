@@ -66,7 +66,7 @@ def turprof_generic(N,Aint,kapa,Rt,y):
     nut = np.hstack((nut[0:n1], nut[-(n1+1)::-1]))
     u = np.hstack((u[0:n1], u[-(n1+1)::-1]))
     #print(u)
-    # rescale with bulk velocity (?)
+    # rescale with bulk velocity 
     Ub = np.trapz(u,x=y0)/np.trapz(np.ones(Nos),x=y0)
     #print(Ub)
     u = u/Ub
@@ -178,14 +178,3 @@ def get_vel(alp,bet,D0,D1,vec):
     u = 1j*(alp*D1@vec[0:N+1] - bet*D0@vec[N+1:])/ak2 # streamwise velocity component
     w = 1j*(bet*D1@vec[0:N+1] + alp*D0@vec[N+1:])/ak2 # spanwise velocity
     uv = -0.5*(Rw**2)*np.real(u.conj()*v) 
-
-def weight_matrix_phys(y, N):
-    # shift coordinate y so it is increasing
-    yshift = 1 - y
-    dx = yshift[1:N+1] - yshift[0:N] # compute step in y
-    # weight matrix - half of 
-    Mw = np.zeros(len(y))
-    Mw[1:N] = (dx[0:N-1] + dx[1:N])/2
-    Mw[0] = dx[0]/2
-    Mw[-1] = dx[-1]/2
-    return np.diag(Mw)
