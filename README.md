@@ -5,3 +5,11 @@ This repository contains subroutines to analyse linear stability of an arbitrary
 The main subroutine is OSS_control, which requires a call to Dmat(N), constructing Chebyshev differetiation matrices, and turbulent velocity and turbulent viscosity profiles. The latter can be calculated from semi-empirical expressions for turbulent channel flows, see e.g. turprof_generic(...). 
 
 The resulting eigenvectors u,v,w can be obtained with get_vel(...)
+
+### To use the code:
+- set wavenumbers $\alpha$, $\beta$
+- calculate differentiation matrices with Dmat
+- calculate or load turbulent velocity and viscosity profiles
+- get A,B - discretized matrices of the eigenvalue problem
+- solve for $A \omega x = B x$ 
+- analyse eigenvalues $\omega$ and eigenvectors $x$
